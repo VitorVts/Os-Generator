@@ -1,0 +1,22 @@
+:root{
+
+    --Primary: #5e5c64;
+    --Secondary: #14131b;
+    --PrimaryButton: #2ec27e ;
+    --SecondaryButton: #57e389 ;
+    --Accent: #2ec27e ;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+h1{
+    color: var(--Primary);
+    font-family: 'Poppins',sans-serif;
+    font-weight: bolder;
+}
+
