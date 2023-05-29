@@ -1,3 +1,9 @@
+<?php
+
+    include('protect.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="PT-BR">
 <head>
@@ -10,23 +16,53 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;500;600&display=swap" rel="stylesheet">
     
-    <title>Document</title>
+    <title>OS Generator</title>
 </head>
 
 
 <body>
+
     <div class="container__form">
 
         <div class="form__img">
             <img src="Img/undraw_contract_re_ves9.svg" >
         </div>
+        
         <div class="form">
             <form action="#">
+                
             <div class="form__header">
                 <div class="form__title">
                     <h1>Crie a Os</h1>
-
                 </div>
+                <div class="select__menu">
+                    <div class="select__btn">
+                        
+                        <a class="btn__text">Selecione a OS</a>
+            
+                    </div>
+                    <ul class="options">
+                        <li class="option">
+                            <a href="adesao.php" class="option__text">Adesão</a>
+                            
+                        </li>
+                        <li class="option">
+                            <a href="#" class="option__text">Reparo</a>
+                        </li>
+                        <li class="option">
+                            <a href="#" class="option__text">Cancelamento</a>
+                        </li>
+                        <li class="option">
+                            <a href="#" class="option__text">Mudança de Endereço</a>
+                        </li>
+                    </ul>
+            
+                </div>
+
+                <header>
+        
+    </header>
+                
             </div>   
                 <div class="input__group">
                     <div class="input__box">
@@ -89,5 +125,11 @@
         
         </div>
     </div>
+    <div class="logout__button">
+        <button type="submit"><a href="logout.php">Logout</a></button>
+        </div>
+
+    <script src="Javascript/Global.js"></script>
+    
 </body>
 </html>

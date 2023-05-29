@@ -1,0 +1,116 @@
+
+
+#container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--Primary); 
+}
+
+.login__form{
+    background-color: var(--White);
+    display: flex;
+    flex-direction: column;
+    padding:1em 3em;
+    border-radius: 10px;
+    border: none;
+    gap:2.5em;
+    height: fit-content;
+    font-family: 'Poppins',sans-serif;
+    box-shadow: 10px 10px 6px #0001;
+}
+
+.login__form .form__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.login__form .form__header h1{
+    font-size: 40px;
+    position: relative;
+    color: black;
+    
+}
+
+.login__form .form__header h1::before{
+    position: absolute;
+    content: '';
+    width: 40%;
+    background-color: var(--Accent);
+    height: 3px;
+    bottom: 4px;
+}
+
+.login__form .input__box input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5em;
+    float: right;
+}
+.login__form .input__box label{
+font-size: 14px;
+
+}
+
+.login__form .input__field{
+display: flex;
+align-items: center;
+justify-content:center ;
+gap:15px;
+cursor:text;
+border-bottom: 1px solid var(--Accent);
+}
+.login__form .input__field i{
+    font-size: 1.5em;
+    padding:0.2em;
+}
+.login__form .input__field input{
+    border: none;
+    background-color: transparent;
+    width: 250px;
+    font-size: 1em;
+    padding: 0px 5px;
+
+}
+
+
+
+
+
+
+.login__form .input__field input:focus{
+    outline: none;
+}
+
+.forgot__password {
+    
+    font-size: 0.8em;
+    padding:0.3em;
+    margin-top: 1em;
+    color: var(--Accent);
+}
+.forgot__password a{
+    text-decoration: none;
+    color: var(--Accent);
+}
+
+
+
+.container #login__button{
+    border:none;
+    border-radius: 10px;
+    color: var(--Secondary);
+    background-color: var(--PrimaryButton);
+    width: 100%;
+    padding:0.3em ;
+    font-size: 2em;
+}
+
+.container #login__button:hover{
+opacity: 90%;
+}

@@ -1,6 +1,69 @@
 .container__header{
     margin: 1em;
+    display: flex;
+    justify-content: space-between;
 }
+
+.select__menu{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    flex-direction: column;
+    width: 380px;
+    margin-top: 0%;
+}
+.select__menu .select__btn{
+display: flex;
+height: 55px;
+background-color: #fff;
+padding: 20px;
+font-size: 18px;
+font-weight: 400;
+border-radius: 8px;
+align-items: center;
+justify-content: space-between;
+cursor: pointer;
+box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+}
+
+.select__btn{
+    font-size: 25px ;
+
+}
+.select__menu .options{
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background-color: #fff;
+    display: none;
+}
+
+.select__menu.active .options{
+    display: flex;
+    align-items:start;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    
+    
+}
+
+.options .option{
+    display: flex;
+    height: 55px;
+    cursor: pointer;
+    padding:  0 16px;
+    border-radius: 8px;
+    align-items: center;
+    background-color: #fff;
+
+}
+
+.options .option:hover{
+    background:#eeeeee75;
+}
+
 
 body{
     width: 100%;
@@ -33,9 +96,7 @@ body{
 }
 
 .form__img img{
-    width: 30rem;
-    
-    ;
+    width: 25rem;
 }
 
 .form{
@@ -74,15 +135,20 @@ body{
     justify-content: space-between;
     width: 100%;
     padding: 1rem 0rem;
+    
 }
 
- 
+.option a {
+    text-decoration: none;
+    color: black;
+}
 
 
 .input__box{
     display: flex;
     flex-direction: column;
     margin-bottom: 1.1 rem;
+    width: 10rem;
     
 }
 
@@ -94,6 +160,10 @@ body{
     border-radius: 10px;
     box-shadow: 1px 1px 6px #0001;
 
+}
+
+.input__box select{
+    cursor: pointer;
 }
 
 .input__box input,select:hover{
@@ -123,14 +193,54 @@ background-color: var(--Accent);
 padding: 0.62rem;
 border-radius: 5px;
 cursor: pointer;
+font-weight: bold;
+font-size: 2em;
 }
+
+
+
 
 .criar__button button:hover{
    background-color: var(--Accent);
    opacity: 80%;
     }
 
-@media screen and (max-width:1330px) {
+
+    
+.logout__button{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    align-items: end;
+    justify-content:end;
+    margin-top: -90vh;
+    margin-right: 5em;
+    position: absolute;
+}
+
+.logout__button button{
+    background-color: var(--Accent);
+    border:none;
+    background-color: var(--Accent);
+    padding: .3rem;
+    width: 10rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 1.5em;
+}
+
+.logout__button a{
+    text-decoration: none;
+    color: black;
+}
+.logout__button button:hover{
+opacity: 80%;
+}
+
+
+
+@media screen and (max-width:1550px) {
     .form__img{
         display: none;
     }
@@ -158,11 +268,15 @@ cursor: pointer;
     }
     .input__group{
         height: fit-content;
+        width: 100%;
         flex-direction: column;
         overflow-y: scroll;
         flex-wrap: nowrap;
-        max-height: 10rem;
-        padding-right: 5rem;
+        max-height: 20rem;
+        padding-right:5rem;
+    }
+    .input__box select{
+        width: 100%;
     }
 }
     
