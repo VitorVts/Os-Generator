@@ -11,6 +11,20 @@ options.forEach(option =>{
         btn__text.innerText = selectedOption;
 
 
-        optionMenu.classList.toggle("active")
+        optionMenu.classList.toggle("active");
     })
-})
+});
+
+function trocarDiv(opcao) {
+    // maloca a div que tá inutil
+    var divs = document.getElementsByClassName('OS');
+    for (var i = 0; i < divs.length; i++) {
+      divs[i].style.display = 'none';
+    }
+
+
+    
+    //mostra a div que tá on
+    var div = document.getElementById('OS' + opcao);
+    div.style.display = 'flex';
+  }

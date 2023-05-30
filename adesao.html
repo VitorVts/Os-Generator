@@ -29,8 +29,6 @@
         </div>
         
         <div class="form">
-            <form action="#">
-                
             <div class="form__header">
                 <div class="form__title">
                     <h1>Crie a Os</h1>
@@ -42,12 +40,12 @@
             
                     </div>
                     <ul class="options">
-                        <li class="option">
-                            <a href="adesao.php" class="option__text">Adesão</a>
+                        <li class="option" onclick="trocarDiv(1); return false;">
+                            <a href="#" class="option__text" >Adesão</a>
                             
                         </li>
-                        <li class="option">
-                            <a href="#" class="option__text">Reparo</a>
+                        <li class="option" onclick="trocarDiv(2); return false;"" >
+                            <a href="#" class="option__text" ">Reparo</a>
                         </li>
                         <li class="option">
                             <a href="#" class="option__text">Cancelamento</a>
@@ -59,12 +57,12 @@
             
                 </div>
 
-                <header>
-        
-    </header>
+            <form action="#">
                 
+            
+    
             </div>   
-                <div class="input__group">
+                <div id="OS1" class="input__group OS">
                     <div class="input__box">
                         <label for="valortaxa">Valor da Taxa</label>
                         <input id="valortaxa"type="text" name="valortaxa" placeholder="R$">    
@@ -115,12 +113,63 @@
                     </div>
                     
 
+                    
+                    
+
 
                     
                 </div>
-                <div class="criar__button">
-                    <button>Criar</button>
+                    
+
+                <div id="OS2" class="input__group OS">
+                    <div class="input__box">
+                        <label for="RP_problema">Problema</label>
+                        <input id="RP_prblema"type="text" name="valortaxa">    
                     </div>
+
+                    <div class="input__box">
+                        <label for="RP_acesso">Data de vencimento</label>
+                        <select name="RP_acesso" id="RP_acesso">
+                            <option value=""selected>Selecione</option>
+                            <option value="Wi-fi">Wi-fi</option>
+                            <option value="Cabo">Cabo</option>
+                            <option value="Ambos">Ambos</option>
+                        </select>    
+                    </div>
+               
+                    <div class="input__box">
+                        <label for="RP_alarmes">Data de vencimento</label>
+                        <select name="RP_alarmes" id="RP_alarmes">
+                            <option value=""selected>Selecione</option>
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                        </select>    
+                    </div>
+                
+                    <div class="input__box">
+                        <label for="RP_frequencia">Data de vencimento</label>
+                        <select name="RP_frequencia" id="RP_frequencia">
+                            <option value=""selected>Selecione</option>
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                        </select>    
+                    </div>
+
+                    
+
+
+
+
+                </div>
+                    <div class="criar__button">
+                        <button>Criar</button>
+                    </div>
+
+                
+
+
+
+                
             </form>
         
         </div>
