@@ -27,4 +27,48 @@ function trocarDiv(opcao) {
     //mostra a div que tá on
     var div = document.getElementById('OS' + opcao);
     div.style.display = 'flex';
+  };
+
+
+  document.getElementById("criar__button").addEventListener("click", function() {
+    pegainput();
+    copiarTexto();
+  });
+  
+  function pegainput() {
+    var inputs = document.getElementsByTagName("input");
+    var selects = document.getElementsByTagName("select");
+  
+    var valores = [];
+  
+    for (var j = 0; j < selects.length; j++) {
+      var valorselect = selects[j].value;
+      valores.push(valorselect);
+    }
+  
+    for (var i = 0; i < inputs.length; i++) {
+      var valorinput = inputs[i].value;
+      valores.push(valorinput);
+    }
+  
+    var texto = "ADESÃO:"+"\n";
+    texto += "PLANO:" + valores[0] + "\n";
+    texto += "VENCIMENTO: " + valores[1] + "\n";
+    texto += "VALOR DA TAXA:" + valores[2] + "\n";
+    texto += "MODO DE PAGAMENTO:" + valores[3] + "\n";
+    texto += "PONTO DE REFERÊNCIA:" + valores[11] + "\n";
+    texto += "CONTATOS DO CLIENTE:" + valores[8] + "\n";
+    texto += "CONTATOS(2) DO CLIENTE: " + valores[9] + "\n";
+    texto += "DATA DO AGENDAMENTO: " + valores[10] + "\n";
+    texto += "DESEJA ANTECIPAR:  " + valores[4] + "\n";
+    
+    document.getElementById("texto__os").value = texto;
   }
+  
+  function copiarTexto() {
+    var textoOs = document.getElementById("texto__os");
+    textoOs.select();
+    navigator.clipboard.writeText(textoOs.value);
+    alert("Texto copiado para a área de transferência:\n\n" + textoOs.value);
+  }
+  
