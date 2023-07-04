@@ -6,11 +6,10 @@
 
 .select__menu{
     display: flex;
-    align-items: end;
     justify-content: center;
     flex-direction: column;
-    width: 380px;
-    margin-top: 0%;
+    position: relative;
+    
 }
 .select__menu .select__btn{
 display: flex;
@@ -44,8 +43,9 @@ box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
     align-items:end;
     justify-content: end;
     flex-direction: column;
-    position: absolute;
-    
+    position:absolute;
+    margin-top: 20rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
     
 }
 
@@ -61,7 +61,7 @@ box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
 }
 
 .options .option:hover{
-    background:#eeeeee75;
+    background:#cecdcd75;
 }
 
 
@@ -75,10 +75,13 @@ body{
 
 }
 .container__form{
-    width: 80%;
+    width: 80vw;
     height: 80vh;
     display: flex;
+    justify-content: center;
+    position: relative;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+    
 }
 
 .form__title{
@@ -88,57 +91,62 @@ body{
 
 .form__img{
     width: 50%;
+    position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
     background-color: var(--Accent);
     padding: 1rem;
+    
 }
 
 .form__img img{
-    width: 25rem;
+    width: 100%;
 }
 
 .form{
-    width: 50%;
-    height: 100%;
     display: flex;
+    width: 50%;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background-color: #fff;
-    padding: 3rem;
+    padding: 1rem;
+    overflow:scroll;
+    
 }
 .form__header{
-    margin-bottom: 35rem;
     display: flex;
-    position: fixed;
+    position:relative;
+    align-items: center;
+    justify-content: space-around;
+    
+    
     
 }
 
 .form__header h1 {
     color: var(--Accent);
+    font-size: 36px;
 }
 
 .form__header h1::after{
     content: '';
     display: block;
-    width: 5rem;
+    width: 10rem;
     height: 0.3rem;
     background-color: var(--Accent);
     margin: 0 auto ;
-    position: absolute;
     border-radius: 10px;
+    
 }
 
 .input__group{
     display: flex;
-    flex-wrap:wrap;
-    align-items: center;
-    gap:1rem;
-    margin-top: 7em;
-    width: 85%;
-    padding: 2rem 0rem;
+    justify-content: center;
+    align-items:center;
+    flex-wrap: wrap;
+    gap:3rem;
+    width: 100%;
+    padding: 3rem 0rem;
+    
     
 }
 .option{
@@ -153,10 +161,12 @@ body{
 
 .input__box{
     display: flex;
+    align-items: center;
+    justify-content: start;
     flex-wrap: wrap;
-    flex-direction: column;
-    margin-bottom: 1.1 rem;
-    width: 10rem;
+    width: 25vh;
+    font-size: 12px;
+    
     
 }
 
@@ -167,27 +177,19 @@ body{
     width: 100%;
     border-radius: 10px;
     box-shadow: 1px 1px 6px #0001;
-
+    background-color: #fffeff;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
 }
 
 
 .input__box#endereco{
- width: 100%;  
- height: 40%;
+ width: 90%;  
 }
 
 .input__box select{
     cursor: pointer;
 }
 
-.input__box input,select,textarea:hover{
-
-    background-color: #eeeeee75;
-}
-
-.input__box input,textarea:focus-visible{
-    outline: 1px solid var(--Accent) ;
-}
 
 .input__box label{
     font-size: 0.75rem;
@@ -201,8 +203,11 @@ body{
 
 
 .criar__button button{
-    width: 16em;
-    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 10em;
     border:none;
     background-color: var(--Accent);
     padding: 0.62rem;
@@ -225,20 +230,21 @@ body{
 .logout__button{
     display: flex;
     position: absolute;
-    width: 100%;
-    align-items: end;
-    justify-content:end;
-    margin-top: -90vh;
-    margin-right: 5em;
-    position: absolute;
+    align-items: center;
+    justify-content:center;
+    padding: 1rem;
+    top: 0;
+    right: 0;
+    
+
 }
 
 .logout__button button{
+    display: block;
     background-color: var(--Accent);
     border:none;
     background-color: var(--Accent);
-    padding: .3rem;
-    width: 10rem;
+    width: 5rem;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bolder;
@@ -267,51 +273,4 @@ textarea{
 
 
 
-
-
-
-
-
-
-@media screen and (max-width:1700px) {
-    .form__img{
-        display: none;
-    }
-
-
-.container__form{
-   width: 50%;
-
-}
-
-.form{
-    width: 100%;
-}
-
-
-@media screen  and (max-width: 1064px){
-    .form{
-        height: 100%;
-    }
     
-    .container__form{
-        width: 90%;
-        height:auto;
-        
-        align-items: center;
-    }
-    .input__group{
-        height: fit-content;
-        width: 100%;
-        flex-direction: column;
-        overflow-y: scroll;
-        flex-wrap: nowrap;
-        max-height: 20rem;
-        padding-right:5rem;
-    }
-    .input__box select{
-        width: 100%;
-    }
-}
-    
-}
