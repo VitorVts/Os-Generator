@@ -1,125 +1,56 @@
-.container__header{
-    margin: 1em;
-    display: flex;
-    justify-content: space-between;
-}
-
-.select__menu{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    position: relative;
-    
-}
-.select__menu .select__btn{
-display: flex;
-height: 55px;
-background-color: #fff;
-padding: 20px;
-font-size: 18px;
-font-weight: 400;
-border-radius: 8px;
-align-items: center;
-justify-content: space-between;
-cursor: pointer;
-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
-}
-
-.select__btn{
-    font-size: 25px ;
-
-}
-.select__menu .options{
-    position: relative;
-    padding: 15px;
-    margin-top: 10px;
-    border-radius: 8px;
-    background-color: #fff;
-    display: none;
-}
-
-.select__menu.active .options{
-    display: flex;
-    align-items:end;
-    justify-content: end;
-    flex-direction: column;
-    position:absolute;
-    margin-top: 20rem;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
-    
-}
-
-.options .option{
-    display: flex;
-    height: 55px;
-    cursor: pointer;
-    padding:  0 16px;
-    border-radius: 8px;
-    align-items: center;
-    background-color: #fff;
-
-}
-
-.options .option:hover{
-    background:#cecdcd75;
-}
-
-
-body{
+body {
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--Primary);
-
 }
-.container__form{
-    width: 80vw;
-    height: 80vh;
+
+.container__form {
+    width: 90vw;
+    height: 90vh;
     display: flex;
     justify-content: center;
     position: relative;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
-    
 }
 
-.form__title{
+.form__title {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
 }
 
-.form__img{
+.navBottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    position: absolute;
+}
+
+.form__img {
     width: 50%;
     position: relative;
     display: flex;
     justify-content: center;
     background-color: var(--Accent);
     padding: 1rem;
-    
 }
 
-.form__img img{
+.form__img img {
     width: 100%;
 }
 
-.form{
+.form {
     display: flex;
-    width: 50%;
+    width: 100%;
     flex-direction: column;
     background-color: #fff;
     padding: 1rem;
-    overflow:scroll;
-    
-}
-.form__header{
-    display: flex;
-    position:relative;
-    align-items: center;
-    justify-content: space-around;
-    
-    
-    
+    overflow: scroll;
 }
 
 .form__header h1 {
@@ -127,50 +58,103 @@ body{
     font-size: 36px;
 }
 
-.form__header h1::after{
+.form__header h1::after {
     content: '';
     display: block;
     width: 10rem;
     height: 0.3rem;
     background-color: var(--Accent);
-    margin: 0 auto ;
+    margin: 0 auto;
     border-radius: 10px;
-    
 }
 
-.input__group{
+.navBottom {
+    display: flex;
+    align-items: end;
+    right: 2em;
+    flex-direction: column;
+    color: var(--Accent);
+    position: absolute;
+    z-index: 1;
+    transition: ease;
+    border-radius: 9px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+    background-color: white;
+}
+
+.navBottom:hover {
+    background-color: white;
+}
+
+.navMenu i {
+    font-size: 2rem;
+}
+
+.navOptions {
+    display: none;
+    align-items: end;
+    flex-direction: column;
+    top: 1rem;
+    gap: 1rem;
+}
+
+.navOptions h3 {
+    padding: 5px;
+}
+
+.navOptions h3:hover {
+    pad: 2rem;
+    border-radius: 9px;
+    background-color: rgb(233, 233, 233);
+}
+
+.input__group {
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     flex-wrap: wrap;
-    gap:3rem;
+    position: relative;
+    gap: 2rem;
     width: 100%;
+    margin-top: 1em;
     padding: 3rem 0rem;
-    
-    
 }
-.option{
+
+.osTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.osTitle h1 {
+    color: var(--Accent);
+    font-size: 1.5rem;
+}
+
+.option {
     width: 100%;
 }
 
 .option a {
     text-decoration: none;
     color: black;
-    
 }
 
-.input__box{
+.input__box {
     display: flex;
     align-items: center;
     justify-content: start;
     flex-wrap: wrap;
     width: 25vh;
     font-size: 12px;
-    
-    
 }
 
-.input__box input,select,textarea{
+.input__box input,
+select,
+textarea {
     margin: 0.6rem;
     padding: 0.8rem 1.2rem;
     border: none;
@@ -181,34 +165,35 @@ body{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
 }
 
-
-.input__box#endereco{
- width: 90%;  
+.input__box#endereco {
+    width: 40%;
 }
 
-.input__box select{
+.input__box#obs {
+    width: 40%;
+}
+
+.input__box select {
     cursor: pointer;
 }
 
-
-.input__box label{
+.input__box label {
     font-size: 0.75rem;
     font-weight: 600;
     color: var(--Primary);
 }
 
-.input__box input::placeholder{
+.input__box input::placeholder {
     color: #000000be;
 }
 
-
-.criar__button button{
+.criar__button button {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     width: 10em;
-    border:none;
+    border: none;
     background-color: var(--Accent);
     padding: 0.62rem;
     border-radius: 5px;
@@ -217,60 +202,258 @@ body{
     font-size: 2em;
 }
 
+.criar__button button:hover {
+    background-color: var(--Accent);
+    opacity: 80%;
+}
 
-
-
-.criar__button button:hover{
-   background-color: var(--Accent);
-   opacity: 80%;
-    }
-
-
-    
-.logout__button{
+.logout__button {
     display: flex;
     position: absolute;
     align-items: center;
-    justify-content:center;
-    padding: 1rem;
+    justify-content: center;
     top: 0;
     right: 0;
-    
-
+    padding: 0.5em;
 }
 
-.logout__button button{
-    display: block;
+.logout__button button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--Accent);
-    border:none;
-    background-color: var(--Accent);
-    width: 5rem;
+    border: none;
+    width: 3rem;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bolder;
-    font-size: 1.5em;
 }
 
-.logout__button a{
+.logout__button a {
     text-decoration: none;
     color: black;
 }
-.logout__button button:hover{
-opacity: 80%;
+
+.logout__button button:hover {
+    opacity: 80%;
 }
 
+.OS {
+    display: none;
+}
 
+textarea {
+    display: none;
+}
 
+.container__header {
+    margin: 1em;
+    display: flex;
+    justify-content: space-between;
+}
 
+.select__menu {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.select__menu .select__btn {
+    display: flex;
+    height: 55px;
+    background-color: #fff;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+}
+
+.select__btn {
+    font-size: 25px;
+}
+
+.select__menu .options {
+    position: relative;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background-color: #fff;
+    display: none;
+}
+
+.select__menu.active .options {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    flex-direction: column;
+    position: absolute;
+    margin-top: 20rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+}
+
+.options .option {
+    display: flex;
+    height: 55px;
+    cursor: pointer;
+    padding: 0 16px;
+    border-radius: 8px;
+    align-items: center;
+    background-color: #fff;
+}
+
+.options .option:hover {
+    background: #cecdcd75;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Primary);
+}
+
+.container__form {
+    width: 90vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+}
+
+.form__title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navBottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    position: absolute;
+}
+
+.form__img {
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: var(--Accent);
+    padding: 1rem;
+}
+
+.form__img img {
+    width: 100%;
+}
+
+.form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 1rem;
+    overflow: scroll;
+}
+
+.form__header h1 {
+    color: var(--Accent);
+    font-size: 36px;
+}
+
+.form__header h1::after {
+    content: '';
+    display: block;
+    width: 10rem;
+    height: 0.3rem;
+    background-color: var(--Accent);
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.navBottom {
+    display: flex;
+    align-items: end;
+    right: 2em;
+    flex-direction: column;
+    color: var(--Accent);
+    position: absolute;
+    z-index: 1;
+    transition: ease;
+    border-radius: 9px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+    background-color: white;
+}
+
+.navBottom:hover {
+    background-color: white;
+}
+
+.navMenu i {
+    font-size: 2rem;
+}
+
+.navOptions {
+    display: none;
+    align-items: end;
+    flex-direction: column;
+    top: 1rem;
+    gap: 1rem;
+}
+
+.navOptions h3 {
+    padding: 5px;
+}
+
+.navOptions h3:hover {
+    pad: 2rem;
+    border-radius: 9px;
+    background-color: rgb(233, 233, 233);
+}
+
+.input__group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    gap: 2rem;
+    width: 100%;
+    margin-top: 1em;
+    padding: 3rem 0rem;
+}
+
+.osTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.osTitle h1 {
+    color: var(--Accent);
+    font-size: 1.5rem;
+}
+
+.option {
+    width: 100%;
+}
+
+.option a {
+    text-decoration: none;
+    color: black;
+}
 .OS{
     display: none;
 }
-
-
-textarea{
-    display: none;
-}
-
-
-
-    

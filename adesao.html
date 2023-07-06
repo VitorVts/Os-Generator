@@ -15,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <title>OS Generator</title>
 </head>
@@ -31,42 +32,34 @@
         <div class="form">
             <div class="form__header">
                 <div class="form__title">
-                    <h1>Crie a Os</h1>
-                </div>
-                <div class="select__menu">
-                    <div class="select__btn">
-                        
-                        <a class="btn__text">Selecione a OS</a>
-            
+                    <h1>Crie a Os  </h1> 
+                    <div class="navBottom">
+                        <h2 class="navMenu"><i class="fa-solid fa-ellipsis"></i></h2>
+                        <div class="navOptions">
+                            <h3 class="menuItem"> Adesão</h3>
+                            <h3 class="menuItem"> Reparo</h3>
+                            <h3 class="menuItem"> Mud.Endereço</h3>
+                            <h3 class="menuItem"> Religação</h3>
+                            <h3 class="menuItem"> Cancelamento</h3>
+                            </div>
                     </div>
-                    <ul class="options">
-                        <li class="option" onclick="trocarDiv(1); return false;">
-                            <a href="#" class="option__text" >Adesão</a>
-                            
-                        </li>
-                        <li class="option" onclick="trocarDiv(2); return false;"" >
-                            <a href="#" class="option__text" ">Reparo</a>
-                        </li>
-                        <li class="option">
-                            <a href="#" class="option__text">Cancelamento</a>
-                        </li>
-                        <li class="option">
-                            <a href="#" class="option__text">Mudança de Endereço</a>
-                        </li>
-                    </ul>
-            
                 </div>
-
+                        
+                        
             </div>
                 
             
     
-               
-                <div id="OS1" class="input__group OS">
-
+               <div class="slider">
+                <div class="sliderWrapper">
+                    <div class="sliderItem">
+                        
+                <div id="OS" class="input__group OS">
+                    <div class="osTitle"><h1>Adesão</h1></div>
                     <div class="input__box">
+                        
                         <label for="plano">Plano</label>
-                        <select name="plano" id="plano">
+                        <select name="plano" class="adInput">
                             <option value="">Selecione</option>
                             <option value=" ( x ) 200MBPS ( ) 40MBPS ( ) 20MBPS">200MB</option>
                             <option value=" (  ) 200MBPS ( x ) 40MBPS ( ) 20MBPS40">40MB</option>
@@ -77,7 +70,7 @@
 
                     <div class="input__box">
                         <label for="vencimento">Data de vencimento</label>
-                        <select name="vencimento" id="vencimento">
+                        <select name="vencimento" class="adInput">
                             <option value=""selected>Selecione</option>
                             <option value="Dia1"> Dia 1</option>
                             <option value="Dia5"> Dia 5</option>
@@ -87,7 +80,7 @@
 
                     <div class="input__box">
                         <label for="valortaxa">Valor da Taxa</label>
-                        <select name="valortaxa" id="valortaxa">
+                        <select name="valortaxa" class="adInput">
                             <option value="">Selecione</option>
                             <option value="180"> R$180,00</option>
                             <option value="150"> R$150,00</option>
@@ -98,7 +91,7 @@
 
                     <div class="input__box">
                         <label for="pagamento">Modo de Pagamento</label>
-                        <select name="pagamento" id="pagamento">
+                        <select name="pagamento" class="adInput">
                         <option value="">Selecione</option>
                         <option value=" ( x ) A VISTA    (   )3X  (   )Ação Marketing">A Vista</option>
                         <option value=" (   ) A VISTA    ( x )3X  (   )Ação Marketing">3X</option>
@@ -108,23 +101,23 @@
 
                     <div class="input__box">
                         <label for="contato">Contato</label>
-                        <input id="contato"type="text" name="contato" placeholder="(00)00000-0000">    
+                        <input class="adInput"type="text" name="contato" placeholder="(00)00000-0000">    
                     </div>
                     
                     <div class="input__box">
                         <label for="contato2">Contato 2</label>
-                        <input id="contato2"type="text" name="contato2" placeholder="(00)00000-0000">    
+                        <input class="adInput"type="text" name="contato2" placeholder="(00)00000-0000">    
                     </div>
 
                     <div class="input__box">
                         <label for="agendamento">Data de Agendamento</label>
                         
-                        <input id="agendamento"type="date" name="agendamento">    
+                        <input class="adInput"type="date" name="agendamento" pattern="dd-mm">    
                     </div>
 
                     <div class="input__box">
                         <label for="antecipar">Deseja Antecipar</label>
-                        <select name="antecipar" id="antecipar">
+                        <select name="antecipar" class="adInput">
                             <option value="">Selecione</option>
                             <option value="( x ) SIM (  )NÃO">Sim</option>
                             <option value="(  ) SIM ( x )NÃO">Não</option>
@@ -136,7 +129,11 @@
                     
                     <div class="input__box" id="endereco">
                         <label for="endereço">Ponto de Referência</label>
-                        <input id="endereco"type="text" name="endereco" placeholder="Digite Aqui">     
+                        <input class="adInput"type="text" name="endereco" placeholder="Digite Aqui">     
+                    </div>
+                    <div class="input__box" id="obs">
+                        <label for="obs">OBS:</label>
+                        <input class="adInput"type="text" name="endereco" placeholder="Digite Aqui">     
                     </div>
                     <textarea name="resultado" id="resultado" cols="30" rows="10"></textarea>
 
@@ -150,25 +147,26 @@
                 </div>
                     
 
-                <div id="OS2" class="input__group OS">
+                <div id="OS" class="input__group OS">
                     <div class="input__box">
+                        <div class="osTitle"><h1>Reparo</h1></div>
                         <label for="RP_problema">Problema</label>
                         <input id="RP_prblema"type="text" name="valortaxa">    
                     </div>
 
                     <div class="input__box">
-                        <label for="RP_acesso">Data de vencimento</label>
+                        <label for="RP_acesso">Acesso</label>
                         <select name="RP_acesso" id="RP_acesso">
                             <option value=""selected>Selecione</option>
-                            <option value="Wi-fi">Wi-fi</option>
-                            <option value="Cabo">Cabo</option>
-                            <option value="Ambos">Ambos</option>
+                            <option value="X">Wi-fi</option>
+                            <option value="X">Cabo</option>
+                            <option value="X">Ambos</option>
                         </select>    
                     </div>
                
                     <div class="input__box">
-                        <label for="RP_alarmes">Data de vencimento</label>
-                        <select name="RP_alarmes" id="RP_alarmes">
+                        <label for="rpReset">Reset da Onu </label>
+                        <select name="rpReset" id="rpReset">
                             <option value=""selected>Selecione</option>
                             <option value="Sim">Sim</option>
                             <option value="Não">Não</option>
@@ -176,13 +174,31 @@
                     </div>
                 
                     <div class="input__box">
-                        <label for="RP_frequencia">Data de vencimento</label>
-                        <select name="RP_frequencia" id="RP_frequencia">
+                        <label for="rpFreq">Alarme U2000</label>
+                        <select name="rpFreq" id="rpFreq">
                             <option value=""selected>Selecione</option>
                             <option value="Sim">Sim</option>
                             <option value="Não">Não</option>
                         </select>    
                     </div>
+
+                    <div class="input__box">
+                        <label for="rpSinal">Alarme U2000</label>
+                        <select name="rpSinal" id="rpSinal">
+                            <option value=""selected>Selecione</option>
+                            <option value="Sim">Ok</option>
+                            <option value="Não">LedLoss</option>
+                            <option value="Não">Acima do Padrão</option>
+                        </select>    
+                    </div>
+                    <div class="input__box" id="Cto">
+                        <label for="Cto">Cto</label>
+                        <input placeholder="Digite Aqui..."> </input>    
+                    </div>
+
+
+
+
 
                     <div class="input__box" id="endereco">
                         <label for="endereço">Ponto de Referência</label>
@@ -193,6 +209,9 @@
                     </div>
 
                 </div>
+                    </div>
+                </div>
+               </div>
 
                 <textarea name="texto__os" id="texto__os" cols="0" rows="10"></textarea>
 
@@ -200,9 +219,9 @@
         </div>
     </div>
     <div class="logout__button">
-        <button type="submit"><a href="logout.php">Logout</a></button>
+        <button type="submit"><a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></button>
         </div>
-
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="Javascript/Global.js"></script>
     
 </body>

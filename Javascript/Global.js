@@ -1,74 +1,66 @@
-const optionMenu = document.querySelector(".select__menu"),
-    selectBtn = optionMenu.querySelector(".select__btn"),
-    options = optionMenu.querySelectorAll(".option"),
-    btn__text = optionMenu.querySelector(".btn__text");
+const navMenu = document.querySelector(".navMenu");
+const menuOption = document.querySelector(".navOptions");
+let menuOpen = false;
 
-selectBtn.addEventListener("click",() => optionMenu.classList.toggle("active")); 
+const menuItem = document.querySelectorAll(".menuItem");
+const osItem = document.querySelectorAll(".OS");
 
-options.forEach(option =>{
-    option.addEventListener("click",()=>{
-        let selectedOption = option.querySelector(".option__text").innerText;
-        btn__text.innerText = selectedOption;
+let osOpen = false;
 
-
-        optionMenu.classList.toggle("active");
-    })
+menuItem.forEach((item, index) => {
+  item.addEventListener("click", () => {
+    if (osOpen) {
+      // some com a OS
+      osItem.forEach((os) => {
+        os.style.display = "none";
+      });
+    }
+    // mostra a os certa
+    osItem[index].style.display = "flex";
+    osOpen = true;
+  });
 });
 
-function trocarDiv(opcao) {
-    // maloca a div que tá inutil
-    var divs = document.getElementsByClassName('OS');
-    for (var i = 0; i < divs.length; i++) {
-      divs[i].style.display = 'none';
-    }
+navMenu.addEventListener("click", () => {
+  if (menuOpen) {
+    menuOption.style.display = "none";
+    menuOpen = false;
+  } else {
+    menuOption.style.display = "flex";
+    menuOpen = true;
+  }
+});
+
+let adInput = document.querySelectorAll(".adInput");
+const crButton = document.querySelector(".criar__button");
 
 
-    
-    //mostra a div que tá on
-    var div = document.getElementById('OS' + opcao);
-    div.style.display = 'flex';
-  };
 
+crButton.addEventListener("click", () => {
 
-  document.getElementById("criar__button").addEventListener("click", function() {
-    pegainput();
-    copiarTexto();
+  var dataInput = adInput[6].value;
+
+  let data = new Date(dataInput);
+  
+  let dataFormatada = data.toLocaleDateString("pt-BR", { timeZone: "UTC" });
+
+  Swal.fire({
+    icon: "success",
+    title: "Oops...",
+    html: ` <h1>PLANO:${adInput[0].value}<br> 
+    VENCIMENTO: ${adInput[1].value}<br>
+    VALOR:R$ ${adInput[2].value}<br>
+    MODO DE PAGAMENTO: ${adInput[3].value}<br>  
+    PONTOS DE REFERÊNCIA:${adInput[4].value}<br>
+    CONTATOS DO CLIENTE:${adInput[5].value}<br>
+    CONTATOS(2) DO CLIENTE:${adInput[7].value}<br>
+    DATA DO AGENDAMENTO: ${dataFormatada}<br>
+    DESEJA OU NÃO ANTECIPAR: ${adInput[8].value}<br>
+    OBS${adInput[9].value} `,
   });
-  
-  function pegainput() {
-    var inputs = document.getElementsByTagName("input");
-    var selects = document.getElementsByTagName("select");
-  
-    var valores = [];
-  
-    for (var j = 0; j < selects.length; j++) {
-      var valorselect = selects[j].value;
-      valores.push(valorselect);
-    }
-  
-    for (var i = 0; i < inputs.length; i++) {
-      var valorinput = inputs[i].value;
-      valores.push(valorinput);
-    }
-  
-    var texto = "ADESÃO:"+"\n";
-    texto += "PLANO:" + valores[0] + "\n";
-    texto += "VENCIMENTO: " + valores[1] + "\n";
-    texto += "VALOR DA TAXA:" + valores[2] + "\n";
-    texto += "MODO DE PAGAMENTO:" + valores[3] + "\n";
-    texto += "PONTO DE REFERÊNCIA:" + valores[11] + "\n";
-    texto += "CONTATOS DO CLIENTE:" + valores[8] + "\n";
-    texto += "CONTATOS(2) DO CLIENTE: " + valores[9] + "\n";
-    texto += "DATA DO AGENDAMENTO: " + valores[10] + "\n";
-    texto += "DESEJA ANTECIPAR:  " + valores[4] + "\n";
-    
-    document.getElementById("texto__os").value = texto;
-  }
-  
-  function copiarTexto() {
-    var textoOs = document.getElementById("texto__os");
-    textoOs.select();
-    navigator.clipboard.writeText(textoOs.value);
-    alert("Texto copiado para a área de transferência:\n\n" + textoOs.value);
-  }
-  
+
+});
+
+
+
+
