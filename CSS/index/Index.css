@@ -1,6 +1,5 @@
 body {
     width: 100%;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,6 +9,7 @@ body {
 .container__form {
     width: 90vw;
     height: 90vh;
+    margin-top: 3vw;
     display: flex;
     justify-content: center;
     position: relative;
@@ -19,17 +19,12 @@ body {
 .form__title {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    position: relative;;
+
 }
 
-.navBottom {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 1rem;
-    gap: 1rem;
-    position: absolute;
-}
+
 
 .form__img {
     width: 50%;
@@ -38,29 +33,49 @@ body {
     justify-content: center;
     background-color: var(--Accent);
     padding: 1rem;
+    animation: img-light-to-dark .4s ease-in-out;
 }
-
+.form__img.dark{
+    background-color:gray ;
+    animation: img-dark-to-light .4s ease-in-out
+}
 .form__img img {
     width: 100%;
 }
-
 .form {
     display: flex;
     width: 100%;
     flex-direction: column;
-    background-color: #fff;
+    background-color: white;
     padding: 1rem;
     overflow: scroll;
+    animation: light-to-dark .4s ease-in-out ;
+    
+}
+.form.dark{
+    background-color:var(--Primary) ;
+    animation: dark-to-light .4s ease-in-out ;
 }
 
-.form__header h1 {
+
+.form__title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 5VW;
+    left: 20vw;
+    bottom: 30vw;
+    position: absolute;
+}
+.form__title h1 {
     color: var(--Accent);
     font-size: 36px;
+    position: absolute;
 }
 
-.form__header h1::after {
+.form__title h1::after {
     content: '';
-    display: block;
+    display: flex;
     width: 10rem;
     height: 0.3rem;
     background-color: var(--Accent);
@@ -68,50 +83,76 @@ body {
     border-radius: 10px;
 }
 
-.navBottom {
+
+.navBottom{
     display: flex;
-    align-items: end;
-    right: 2em;
-    flex-direction: column;
-    color: var(--Accent);
-    position: absolute;
-    z-index: 1;
-    transition: ease;
-    border-radius: 9px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
-    background-color: white;
+    align-items: center;
+    justify-content:start;
+    flex-direction: row;
+    position: relative;
+    left: 0;
+    border-radius: 1rem;
+    width: 0%;
+    transition: all 1s;
+    
 }
-
-.navBottom:hover {
-    background-color: white;
-}
-
-.navMenu i {
+.navBottom i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding:13px;
     font-size: 2rem;
+    color: var(--Accent);
+    
+}
+.navBottom{
+    width: 100%;
+    
 }
 
+.navMenu{
+    color: var(--Accent);
+}
+
+.navOptions.active{
+    width: 100%;
+}
 .navOptions {
-    display: none;
-    align-items: end;
-    flex-direction: column;
-    top: 1rem;
-    gap: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 0%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-radius:5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+    gap: 2em;
+    overflow-x:hidden;
+    transition: all .8s ease-in-out;
 }
 
 .navOptions h3 {
-    padding: 5px;
+    color: var(--Accent);
+    font-size: 13px;
+    font-weight:bold;
+    cursor: pointer;
+    position: relative;
+    
+}
+.navOptions h3:hover{
+    font-size: 16px;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+    transition: all .5s ease-in-out;
 }
 
-.navOptions h3:hover {
-    pad: 2rem;
-    border-radius: 9px;
-    background-color: rgb(233, 233, 233);
-}
+
 
 .input__group {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
     flex-wrap: wrap;
     position: relative;
     gap: 2rem;
@@ -134,64 +175,75 @@ body {
     font-size: 1.5rem;
 }
 
-.option {
-    width: 100%;
-}
 
-.option a {
-    text-decoration: none;
-    color: black;
-}
 
 .input__box {
     display: flex;
-    align-items: center;
-    justify-content: start;
+    align-items:start;
+    justify-content:start;
+    flex-direction: row;
     flex-wrap: wrap;
     width: 25vh;
     font-size: 12px;
+    font-weight: 700;
+    color:gray;
 }
+
 
 .input__box input,
 select,
 textarea {
-    margin: 0.6rem;
-    padding: 0.8rem 1.2rem;
+    padding: .6rem 1.1rem;
     border: none;
     width: 100%;
     border-radius: 10px;
-    box-shadow: 1px 1px 6px #0001;
     background-color: #fffeff;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
 }
 
 .input__box#endereco {
-    width: 40%;
+    width: 100%;
 }
 
-.input__box#obs {
-    width: 40%;
+.obs{
+    width: 100%;
+}
+.input__box#ping{
+    display: flex;
+    flex-direction: column;
 }
 
+.input__box.adObs{
+    width: 100%;
+}
+.input__box.rpObs{
+    width: 70%;
+}
 .input__box select {
     cursor: pointer;
 }
 
-.input__box label {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--Primary);
+.input__box.dark{
+    color: var(--Accent);
 }
 
 .input__box input::placeholder {
     color: #000000be;
 }
-
-.criar__button button {
+#criar__button{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    
+}
+#criar__button button {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    
     width: 10em;
     border: none;
     background-color: var(--Accent);
@@ -202,7 +254,7 @@ textarea {
     font-size: 2em;
 }
 
-.criar__button button:hover {
+#criar__button button:hover {
     background-color: var(--Accent);
     opacity: 80%;
 }
@@ -238,199 +290,8 @@ textarea {
     opacity: 80%;
 }
 
-.OS {
-    display: none;
-}
 
-textarea {
-    display: none;
-}
 
-.container__header {
-    margin: 1em;
-    display: flex;
-    justify-content: space-between;
-}
-
-.select__menu {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    position: relative;
-}
-
-.select__menu .select__btn {
-    display: flex;
-    height: 55px;
-    background-color: #fff;
-    padding: 20px;
-    font-size: 18px;
-    font-weight: 400;
-    border-radius: 8px;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
-}
-
-.select__btn {
-    font-size: 25px;
-}
-
-.select__menu .options {
-    position: relative;
-    padding: 15px;
-    margin-top: 10px;
-    border-radius: 8px;
-    background-color: #fff;
-    display: none;
-}
-
-.select__menu.active .options {
-    display: flex;
-    align-items: end;
-    justify-content: end;
-    flex-direction: column;
-    position: absolute;
-    margin-top: 20rem;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
-}
-
-.options .option {
-    display: flex;
-    height: 55px;
-    cursor: pointer;
-    padding: 0 16px;
-    border-radius: 8px;
-    align-items: center;
-    background-color: #fff;
-}
-
-.options .option:hover {
-    background: #cecdcd75;
-}
-
-body {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--Primary);
-}
-
-.container__form {
-    width: 90vw;
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
-}
-
-.form__title {
-    display: flex;
-    justify-content: space-between;
-}
-
-.navBottom {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 1rem;
-    gap: 1rem;
-    position: absolute;
-}
-
-.form__img {
-    width: 50%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    background-color: var(--Accent);
-    padding: 1rem;
-}
-
-.form__img img {
-    width: 100%;
-}
-
-.form {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    background-color: #fff;
-    padding: 1rem;
-    overflow: scroll;
-}
-
-.form__header h1 {
-    color: var(--Accent);
-    font-size: 36px;
-}
-
-.form__header h1::after {
-    content: '';
-    display: block;
-    width: 10rem;
-    height: 0.3rem;
-    background-color: var(--Accent);
-    margin: 0 auto;
-    border-radius: 10px;
-}
-
-.navBottom {
-    display: flex;
-    align-items: end;
-    right: 2em;
-    flex-direction: column;
-    color: var(--Accent);
-    position: absolute;
-    z-index: 1;
-    transition: ease;
-    border-radius: 9px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
-    background-color: white;
-}
-
-.navBottom:hover {
-    background-color: white;
-}
-
-.navMenu i {
-    font-size: 2rem;
-}
-
-.navOptions {
-    display: none;
-    align-items: end;
-    flex-direction: column;
-    top: 1rem;
-    gap: 1rem;
-}
-
-.navOptions h3 {
-    padding: 5px;
-}
-
-.navOptions h3:hover {
-    pad: 2rem;
-    border-radius: 9px;
-    background-color: rgb(233, 233, 233);
-}
-
-.input__group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    position: relative;
-    gap: 2rem;
-    width: 100%;
-    margin-top: 1em;
-    padding: 3rem 0rem;
-}
 
 .osTitle {
     display: flex;
@@ -438,13 +299,9 @@ body {
     align-items: center;
     top: 0;
     left: 0;
-    position: absolute;
+    
 }
 
-.osTitle h1 {
-    color: var(--Accent);
-    font-size: 1.5rem;
-}
 
 .option {
     width: 100%;
@@ -456,4 +313,96 @@ body {
 }
 .OS{
     display: none;
+}
+
+
+.dkMode{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    padding: .5em;
+    margin-left: 2em;
+    top: 0;
+    left: 0;
+}
+
+.dkMode i{
+    font-size: 1.5em;
+    
+}
+
+.fa-toggle-off{
+color: rgb(193, 193, 193);
+animation: menu-light-to-dark 1.3s ease-in-out
+}
+.fa-toggle-on{
+    color: var(--Accent);
+    animation: menu-dark-to-light 1.3s ease-in-out
+}
+
+@keyframes menu-dark-to-light {
+    0%{
+        color:rgb(193, 193, 193);
+    }
+
+    100%{
+        color: var(--Accent);
+    }
+}
+
+@keyframes menu-light-to-dark {
+    100%{
+        color: rgb(193, 193, 193);
+    }
+    0%{
+        color: var(--Primary);
+    }
+
+}
+
+@keyframes img-dark-to-light {
+    0%{
+        background-color: var(--Accent);
+    }
+
+    100%{
+        background-color: gray;
+    }
+}
+@keyframes img-light-to-dark {
+    100%{
+        background-color: var(--Accent);
+    }
+    0%{
+        background-color: gray;
+    }
+
+}
+
+@keyframes dark-to-light {
+    0%{
+        background-color: white;
+    }
+
+    100%{
+        background-color: var(--Primary);
+    }
+}
+@keyframes light-to-dark {
+    100%{
+        background-color: white;
+    }
+    0%{
+        background-color: var(--Primary);
+    }
+
+}
+
+
+
+@media screen and (max-width:1360px){
+    .form__img{
+        display: none;
+    }
 }
