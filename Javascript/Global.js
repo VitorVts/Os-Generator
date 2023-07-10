@@ -14,466 +14,7 @@ teste.addEventListener('click',()=>{
     
 })
 
-
-const menuItem = document.querySelectorAll(".menuItem");
-const osItem = document.querySelectorAll(".OS");
-
-let osOpen = false;
-
-menuItem.forEach((item, index) => {
-  item.addEventListener("click", () => {
-    if (osOpen) {
-      // some com a OS
-      osItem.forEach((os) => {
-        os.style.display = "none";
-      });
-    }
-    // mostra a os certa
-    osItem[index].style.display = "flex";
-    osOpen = true;
-  });
-});
-
-
-
-const adInput = document.querySelectorAll(".adInput");
-const adButton = document.querySelector(".adButton");
-
-adButton.addEventListener("click", () => {
-
-  var dataAdInput = adInput[6].value;
-  let data = new Date(dataAdInput);
-  let dataFormatada = data.toLocaleDateString("pt-BR", { timeZone: "UTC" });
-
-  Swal.fire({
-    icon: "success",
-    title: "Pronto",
-    html: ` <p id="adText" >
-  PLANO:${adInput[0].value}
-  VENCIMENTO:${adInput[1].value}${"\n"}
-  VALOR:R$${adInput[2].value}
-  MODO DE PAGAMENTO:${adInput[3].value}  
-  PONTOS DE REFERÊNCIA:${adInput[8].value}
-  CONTATOS DO CLIENTE:${adInput[4].value}
-  CONTATOS(2) DO CLIENTE:${adInput[5].value}
-  DATA DO AGENDAMENTO:${dataFormatada}
-  DESEJA OU NÃO ANTECIPAR:${adInput[7].value}${"\n"}
-  OBS${adInput[9].value} </p>
-
-  <span>
-  PLANO: ${adInput[0].value}<br>
-  VENCIMENTO: ${adInput[1].value}<br>
-  VALOR:R$ ${adInput[2].value}<br>
-  MODO DE PAGAMENTO: ${adInput[3].value}  <br>
-  PONTOS DE REFERÊNCIA: ${adInput[8].value}<br>
-  CONTATOS DO CLIENTE: ${adInput[4].value}<br>
-  CONTATOS(2) DO CLIENTE: ${adInput[5].value}<br>
-  DATA DO AGENDAMENTO: ${dataFormatada}<br>
-  DESEJA OU NÃO ANTECIPAR: ${adInput[7].value}<br>
-  OBS: ${adInput[9].value} </span>`
-  });
-  const btn = document.querySelector(".swal2-confirm");
-  btn.addEventListener('click', function(e) {
-    let copyText = document.getElementById('adText').innerHTML;
-    let copyTextUpper = copyText.toUpperCase(copyText)
-    navigator.clipboard.writeText(copyTextUpper);
-  });
- 
-});
-
-
-
-const rpInput = document.querySelectorAll(".rpInput");
-const rpButton = document.querySelector(".rpButton");
-rpButton.addEventListener("click", () => {
-
-  var dataInput = rpInput[19].value;
-  let data = new Date(dataInput);
-  let dataFormatada = data.toLocaleDateString("pt-BR", { timeZone: "UTC" });
-
-  Swal.fire({
-    icon: "success",
-    title: "Pronto",
-    html: ` <p id="rpText" >
-  PROBLEMA:${rpInput[0].value}
-  ACESSO:${rpInput[1].value}
-  RESET DE ONU:${rpInput[2].value}${"\n"}
-  VERIFICADO ALARME DO U2000:${rpInput[3].value}
-  SINAL ÓTICO: ${rpInput[4].value}
-  CTO: ${rpInput[5].value}
-  PORTA: ${rpInput[6].value}
-  SSID: ${rpInput[7].value}
-  SENHA ${rpInput[8].value}
-  WIFI SIGNAL DBM: ${rpInput[9].value}
-  TROCA DE FREQUÊNCIA: ${rpInput[10].value}
-  TESTES REALIZADOS: ${rpInput[11].value} ${"\n"}
-  PING CORE 1: ${rpInput[12].value}
-  PING CORE 2: ${rpInput[13].value}
-  PING AMAZON: ${rpInput[14].value}
-  PING FACEBOOK: ${rpInput[15].value}
-  PING LOCAL: ${rpInput[16].value} ${"\n","\n","\n"}
-  CONCLUSÃO: ${rpInput[21].value} ${"\n","\n"}
-  CONTATO DO CLIENTE: ${rpInput[17].value}
-  CONTATO(2) DO CLIENTE: ${rpInput[18].value}
-  DATA DE AGENDAMENTO: ${dataFormatada}
-  PRAZO DE 1 DIA: ${rpInput[20].value}
-  PONTOS DE REFERÊNCIA: ${rpInput[22].value}
-
-    </p>
-    <span>
-  PROBLEMA:${rpInput[0].value}<br>
-  ACESSO:${rpInput[1].value}<br>
-  RESET DE ONU:${rpInput[2].value}<br><br>
-  VERIFICADO ALARME DO U2000:${rpInput[3].value}<br>
-  SINAL ÓTICO:${rpInput[4].value}<br>
-  CTO:${rpInput[5].value}<br>
-  PORTA:${rpInput[6].value}<br><br>
-  SSID:${rpInput[7].value}<br>
-  SENHA${rpInput[8].value}<br>
-  WIFI SIGNAL DBM:${rpInput[9].value}<br>
-  TROCA DE FREQUÊNCIA:${rpInput[10].value}<br>
-  TESTES REALIZADOS:${rpInput[11].value}<br><br>
-  PING CORE 1:${rpInput[12].value}<br>
-  PING CORE 2:${rpInput[13].value}<br>
-  PING AMAZON:${rpInput[14].value}<br>
-  PING FACEBOOK:${rpInput[15].value}<br>
-  PING LOCAL:${rpInput[16].value}<br><br><br>
-  CONTATO DO CLIENTE:${rpInput[17].value}<br>
-  CONTATO(2) DO CLIENTE:${rpInput[18].value}<br>
-  DATA DE AGENDAMENTO:${dataFormatada}<br>
-  PRAZO DE 1 DIA:${rpInput[20].value}<br>
-  PONTOS DE REFERÊNCIA:${rpInput[21].value}<br>
-    </span>`
-  });
-  const btn = document.querySelector(".swal2-confirm");
-  btn.addEventListener('click', function(e) {
-    let copyText = document.getElementById('rpText').innerHTML;
-    let copyTextUpper = copyText.toUpperCase(copyText)
-    navigator.clipboard.writeText(copyTextUpper);
-  });
- 
-});
-
-const mdInput = document.querySelectorAll(".mdInput");
-const mdButton = document.querySelector(".mdButton")
-mdButton.addEventListener("click",()=>{
-
-  var dataInput = mdInput[7].value;
-  let data = new Date(dataInput);
-  let dataFormatada = data.toLocaleDateString("pt-BR", { timeZone: "UTC" });
-
-  Swal.fire({
-    icon: "success",
-    title: "Pronto",
-    html: ` <p id="mdText" >
-    SSID:${mdInput[1].value}
-    SENHA:${mdInput[2].value}
-    CTO:${mdInput[3].value}
-    PORTA:${mdInput[4].value}
-
-    ENDEREÇO ANTIGO: ${mdInput[8].value}
-    PONTOS DE REFERÊNCIA:${mdInput[9].value}
-
-    NOVO ENDEREÇO: ${mdInput[10].value}
-    PONTOS DE REFERÊNCIA:${mdInput[11].value}
-
-    VALOR TAXA:R$${mdInput[0].value}
-
-    CONTATO DO CLIENTE:${mdInput[5].value}
-    CONTATO(2) DO CLIENTE:${mdInput[6].value}
-    DATA DE AGENDAMENTO:${dataFormatada}
-    DESEJA ANTECIPAR:${mdInput[13].value}
-    OBS:${mdInput[12].value}
-    </p>
-    <span>
-    SSID:${mdInput[1].value}<br>
-    SENHA:${mdInput[2].value}<br>
-    CTO:${mdInput[3].value}<br>
-    PORTA:${mdInput[4].value}<br>
-
-    ENDEREÇO ANTIGO: ${mdInput[8].value}<br>
-    PONTOS DE REFERÊNCIA:${mdInput[9].value}<br>
-
-    NOVO ENDEREÇO: ${mdInput[10].value}<br>
-    PONTOS DE REFERÊNCIA:${mdInput[11].value}<br>
-
-    VALOR TAXA:R$${mdInput[0].value}<br>
-
-    CONTATO DO CLIENTE:${mdInput[5].value}<br>
-    CONTATO(2) DO CLIENTE:${mdInput[6].value}<br>
-    DATA DE AGENDAMENTO:${dataFormatada}<br>
-    DESEJA ANTECIPAR:${mdInput[13].value}<br>
-    OBS:${mdInput[12].value}<br>
-    </span>`
-  });
-  const btn = document.querySelector(".swal2-confirm");
-  btn.addEventListener('click', function(e) {
-    let copyText = document.getElementById('mdText').innerHTML;
-    let copyTextUpper = copyText.toUpperCase(copyText)
-    navigator.clipboard.writeText(copyTextUpper);
-  });
-})
-
-
-const rlInput = document.querySelectorAll(".rlInput");
-const rlButton = document.querySelector(".rlButton");
-rlButton.addEventListener("click",()=>{
-  var dataInput = rlInput[8].value;
-  let data = new Date(dataInput);
-  let dataFormatada = data.toLocaleDateString("pt-BR", { timeZone: "UTC" });
-
-  Swal.fire({
-    icon: "success",
-    title: "Pronto",
-    html: ` <p id="rlText" >
-    PLANO:${rlInput[0].value}
-    VALOR TAXA R$: ${rlInput[1].value}
-    SSID:${rlInput[2].value}
-    SENHA:${rlInput[3].value}  
-    CTO:${rlInput[4].value}
-    PORTA:${rlInput[5].value}
-    PONTOS DE REFERÊNCIA:${rlInput[10].value}
-    CONTATOS DO CLIENTE:${rlInput[6].value}
-    CONTATOS(2) DO CLIENTE:${rlInput[7].value}
-    DATA DO AGENDAMENTO: ${dataFormatada} 
-    DESEJA OU NÃO ANTECIPAR:${rlInput[9].value}
-    OBS:${rlInput[11].value}
-    </p>
-    <span>
-    PLANO:${rlInput[0].value}<BR>
-    VALOR TAXA R$: ${rlInput[1].value}<BR>
-    SSID:${rlInput[2].value}<BR>
-    SENHA:${rlInput[3].value}<BR>  
-    CTO:${rlInput[4].value}<BR>
-    PORTA:${rlInput[5].value}<BR>
-    PONTOS DE REFERÊNCIA:${rlInput[10].value}<BR>
-    CONTATOS DO CLIENTE:${rlInput[6].value}<BR>
-    CONTATOS(2) DO CLIENTE:${rlInput[7].value}<BR>
-    DATA DO AGENDAMENTO: ${dataFormatada}<BR> 
-    DESEJA OU NÃO ANTECIPAR:${rlInput[9].value}<BR>
-    OBS:${rlInput[11].value}<BR></span>`
-  });
-
-const btn = document.querySelector(".swal2-confirm");
-  btn.addEventListener('click', function(e) {
-    let copyText = document.getElementById('rlText').innerHTML;
-    let copyTextUpper = copyText.toUpperCase(copyText)
-    navigator.clipboard.writeText(copyTextUpper);
-  });
-
-})
-
-
-
-const clInput = document.querySelectorAll(".clInput");
-const clButton =document.querySelector('.clButton');
-
-clButton.addEventListener("click",()=>{
-  var dataInput = clInput[9].value;
-  let data = new Date(dataInput);
-  let dataFormatada = data.toLocaleDateString("pt-BR", { timeZone: "UTC" });
-
-  Swal.fire({
-    icon: "success",
-    title: "Pronto",
-    html: ` <p id="rlText" >
-    MOTIVO DO CONCELAMENTO:${clInput[0].value}${"\n"}
-    SSID: ${clInput[1].value}
-    SENHA:${clInput[2].value}  
-    CTO:${clInput[3].value}
-    PORTA:${clInput[4].value}${"\n"}
-    CLIENTE CIENTE DA FATURA EM ABERTO:${clInput[5].value}${"\n"}
-    CIENTE QUE EXISTE PROPORCIONAL DE USO, DEVIDO CANCELAMENTO APÓS O VENCIMENTO:${clInput[6].value}${"\n"}
-    PONTOS DE REFERÊNCIA:${clInput[11].value}
-    CONTATOS DO CLIENTE: ${clInput[7].value} 
-    CONTATOS(2) DO CLIENTE:${clInput[8].value}
-    DATA DO AGENDAMENTO:${dataFormatada}
-    DESEJA OU NÃO ANTECIPAR:${clInput[10].value}
-    OBS:${clInput[12].value}
-    </p>
-    <span">
-    MOTIVO DO CONCELAMENTO:${clInput[0].value}<br>
-    SSID: ${clInput[1].value}<br>
-    SENHA:${clInput[2].value}<br>  
-    CTO:${clInput[3].value}<br>
-    PORTA:${clInput[4].value}<br>
-    CLIENTE CIENTE DA FATURA EM ABERTO:${clInput[5].value}<br>
-    CIENTE QUE EXISTE PROPORCIONAL DE USO, DEVIDO CANCELAMENTO APÓS O VENCIMENTO:${clInput[6].value}<br>
-    PONTOS DE REFERÊNCIA:${clInput[11].value}<br>
-    CONTATOS DO CLIENTE: ${clInput[7].value}<br> 
-    CONTATOS(2) DO CLIENTE:${clInput[8].value}<br>
-    DATA DO AGENDAMENTO:${dataFormatada}<br>
-    DESEJA OU NÃO ANTECIPAR:${clInput[10].value}<br>
-    OBS:${clInput[12].value}</span><br>`
-  });
-  const btn = document.querySelector(".swal2-confirm");
-  btn.addEventListener('click', function(e) {
-    let copyText = document.getElementById('clText').innerHTML;
-    let copyTextUpper = copyText.toUpperCase(copyText)
-    navigator.clipboard.writeText(copyTextUpper);
-  });
-});
-
-
-
-const mdeInput = document.querySelectorAll(".mdeInput")
-const mdeButton = document.querySelector(".mdeButton")
-
-
- mdeButton.addEventListener('click',()=>{
-  var dataInput = mdeInput[10].value;
-  let data = new Date(dataInput);
-  let dataFormatada = data.toLocaleDateString("pt-BR", { timeZone: "UTC" });
-
-  Swal.fire({
-    icon: "success",
-    title: "Pronto",
-    html: ` <p id="mdeText" >
-    MOTIVO:${mdeInput[0].value}${"\n"}
-    ${mdeInput[1].value}${"\n"}
-    SSID:${mdeInput[2].value}
-    SENHA: ${mdeInput[3].value}
-    CTO:${mdeInput[4].value}  
-    PORTA:${mdeInput[5].value}${"\n"}${"\n"}
-    CLIENTE CIENTE DA TAXA:${mdeInput[6].value}
-    VALOR TAXA R$${mdeInput[7].value} ${"\n"}
-    PONTOS DE REFERÊNCIA:${mdeInput[12].value}${"\n"}
-    CONTATOS DO CLIENTE: ${mdeInput[8].value} 
-    CONTATOS(2) DO CLIENTE:${mdeInput[9].value}
-    DATA DO AGENDAMENTO:${dataFormatada}
-    DESEJA OU NÃO ANTECIPAR:${mdeInput[11].value}
-    OBS:${mdeInput[13].value}
-    </p>
-    <span">
-    MOTIVO:${mdeInput[0].value}<br>
-    ${mdeInput[1].value}<br>
-    SSID:${mdeInput[2].value}<br>
-    SENHA: ${mdeInput[3].value}<br>
-    CTO:${mdeInput[4].value}<br>  
-    PORTA:${mdeInput[5].value}<br>
-    CLIENTE CIENTE DA TAXA:${mdeInput[6].value}<br>
-    VALOR TAXA R$${mdeInput[7].value}<br>
-    PONTOS DE REFERÊNCIA:${mdeInput[12].value}<br>
-    CONTATOS DO CLIENTE: ${mdeInput[8].value}<br> 
-    CONTATOS(2) DO CLIENTE:${mdeInput[9].value}<br>
-    DATA DO AGENDAMENTO:${dataFormatada}<br>
-    DESEJA OU NÃO ANTECIPAR:${mdeInput[11].value}<br>
-    OBS:${mdeInput[13].value}<br></span>`
-  });
-
-  const btn = document.querySelector(".swal2-confirm");
-  btn.addEventListener('click', function(e) {
-    let copyText = document.getElementById('mdeText').innerHTML;
-    let copyTextUpper = copyText.toUpperCase(copyText)
-    navigator.clipboard.writeText(copyTextUpper);
-  });
- });
-
- const mdpInput = document.querySelectorAll('.mdpInput');
- const mdpButton = document.querySelector('.mdpButton');
- mdpButton.addEventListener("click",()=>{
-  var dataInput = mdpInput[7].value;
-  let data = new Date(dataInput);
-  let dataFormatada = data.toLocaleDateString("pt-BR", { timeZone: "UTC" });
-
-  Swal.fire({
-    icon: "success",
-    title: "Pronto",
-    html: ` <p id="mdpText" >
-    SSID:${mdpInput[0].value}
-    SENHA: ${mdpInput[1].value}
-    CTO:${mdpInput[2].value}  
-    PORTA:${mdpInput[3].value}${"\n"}${"\n"}
-    CLIENTE CIENTE DA TAXA:${mdpInput[4].value}
-    PONTOS DE REFERÊNCIA:${mdpInput[9].value}${"\n"}
-    CONTATOS DO CLIENTE: ${mdpInput[5].value} 
-    CONTATOS(2) DO CLIENTE:${mdpInput[6].value}
-    DATA DO AGENDAMENTO:${dataFormatada}
-    DESEJA OU NÃO ANTECIPAR:${mdpInput[8].value}
-    OBS:${mdpInput[10].value}
-    </p>
-    <span">
-    SSID:${mdpInput[0].value}<br>
-    SENHA: ${mdpInput[1].value}<br>
-    CTO:${mdpInput[2].value}<br>  
-    PORTA:${mdpInput[3].value}<br>${"\n"}<br>${"\n"}<br>
-    CLIENTE CIENTE DA TAXA:${mdpInput[4].value}<br>
-    PONTOS DE REFERÊNCIA:${mdpInput[9].value}<br>${"\n"}<br>
-    CONTATOS DO CLIENTE: ${mdpInput[5].value}<br> 
-    CONTATOS(2) DO CLIENTE:${mdpInput[6].value}<br>
-    DATA DO AGENDAMENTO:${dataFormatada}<br>
-    DESEJA OU NÃO ANTECIPAR:${mdpInput[8].value}<br>
-    OBS:${mdpInput[10].value}<br></span>`
-  });
-  const btn = document.querySelector(".swal2-confirm");
-  btn.addEventListener('click', function(e) {
-    let copyText = document.getElementById('mdpText').innerHTML;
-    let copyTextUpper = copyText.toUpperCase(copyText)
-    navigator.clipboard.writeText(copyTextUpper);
-  });
-
- });
-
-
-
-
-
-
- const fnInput = document.querySelectorAll('.fnInput');
- const fnButton = document.querySelector('.fnButton');
-
- 
- fnButton.addEventListener('click',()=>{
-  var dataInput = fnInput[10].value;
-  let data = new Date(dataInput);
-  let dataFormatada = data.toLocaleDateString("pt-BR", { timeZone: "UTC" });
-
-  Swal.fire({
-    icon: "success",
-    title: "Pronto",
-    html: ` <p id="fnText" >
-    ${fnInput[0].value}${"\n"}
-    ${fnInput[1].value}${"\n"}
-    SSID:${fnInput[2].value}
-    SENHA: ${fnInput[3].value}
-    CTO:${fnInput[4].value}  
-    PORTA:${fnInput[5].value}${"\n"}${"\n"}
-    CLIENTE CIENTE DA TAXA:${fnInput[6].value}
-    VALOR TAXA R$${fnInput[7].value} ${"\n"}
-    PONTOS DE REFERÊNCIA:${fnInput[12].value}${"\n"}
-    CONTATOS DO CLIENTE: ${fnInput[8].value} 
-    CONTATOS(2) DO CLIENTE:${fnInput[9].value}
-    DATA DO AGENDAMENTO:${dataFormatada}
-    DESEJA OU NÃO ANTECIPAR:${fnInput[11].value}
-    OBS:${fnInput[13].value}
-    </p>
-    <span id=popSpan>
-    ${fnInput[0].value}${"\n"}
-    ${fnInput[1].value}${"\n"}
-    SSID:${fnInput[2].value}<br>
-    SENHA: ${fnInput[3].value}<br>
-    CTO:${fnInput[4].value}  <br>
-    PORTA:${fnInput[5].value}${"\n"}${"\n"}<br><br>
-    CLIENTE CIENTE DA TAXA:${fnInput[6].value}
-    VALOR TAXA R$${fnInput[7].value} ${"\n"}<br><br>
-    PONTOS DE REFERÊNCIA:${fnInput[12].value}${"\n"}<br>
-    CONTATOS DO CLIENTE: ${fnInput[8].value} <br>
-    CONTATOS(2) DO CLIENTE:${fnInput[9].value}<br>
-    DATA DO AGENDAMENTO:${dataFormatada}<br>
-    DESEJA OU NÃO ANTECIPAR:${fnInput[11].value}<br>
-    OBS:${fnInput[13].value}<br>
-    </span>`
-  });
-  const btn = document.querySelector(".swal2-confirm");
-  btn.addEventListener('click', function(e) {
-    let copyText = document.getElementById('fnText').innerHTML;
-    let copyTextUpper = copyText.toUpperCase(copyText)
-    navigator.clipboard.writeText(copyTextUpper);
-  });
- });
-
-
- const dkMode = document.querySelector('.dkMode');
+const dkMode = document.querySelector('.dkMode');
 const dkIcon = document.getElementById('dkIcon');
 const dkForm = document.getElementById('form');
 const dkImg = document.getElementById('formImg');
@@ -524,3 +65,470 @@ dkMode.addEventListener('click', () => {
   }
 });
 
+const menuItem = document.querySelectorAll(".menuItem");
+const osItem = document.querySelectorAll(".OS");
+
+let osOpen = false;
+
+menuItem.forEach((item, index) => {
+  item.addEventListener("click", () => {
+    if (osOpen) {
+      // some com a OS
+      osItem.forEach((os) => {
+        os.style.display = "none";
+      });
+    }
+    // mostra a os certa
+    osItem[index].style.display = "flex";
+    osOpen = true;
+  });
+});
+
+
+ const adInput = document.querySelectorAll('.adInput');
+ const adButton = document.querySelector('.adButton');
+ 
+ adButton.addEventListener('click',()=>{
+  const adValues = [...adInput].map(input => input.value);
+  var dataInput = adValues[6];
+  let data = new Date(dataInput);
+  let dataFormatada = data.toLocaleDateString("pt-BR", { timeZone: "UTC" });
+ 
+  const text = `
+PLANO:${adValues[0]}
+VENCIMENTO:${adValues[1]+"\n"}
+VALOR TAXA:R$ ${adValues[2]}
+MODO DE PAGAMENTO: ${adValues[3]+"\n"}
+PONTOS DE REFERÊNCIA:${adValues[8]}  
+CONTATOS DO CLIENTE:${adValues[4]}
+CONTATOS(2) DO CLIENTE(2):${adValues[5]}
+DATA DO AGENDAMENTO:${dataFormatada} 
+DESEJA OU NÃO ANTECIPAR:${adValues[7]+"\n"}
+OBS: ${adValues[9]}`
+   
+    
+  Swal.fire({
+  icon: "success",
+  title: "Pronto",
+  html: `<textarea id="adText" class="my-custom-textarea">${text}</textarea>`,
+  
+
+  });
+  
+  const btn = document.querySelector(".swal2-confirm");
+  btn.addEventListener('click', function(e) {
+    let copyText = document.getElementById('adText').value;
+   
+    let copyTextUpper = copyText.toUpperCase(copyText)
+    navigator.clipboard.writeText(copyTextUpper);
+    
+  });
+ });
+
+
+
+
+
+
+//Reparo 
+ const rpInput = document.querySelectorAll('.rpInput');
+ const rpButton = document.querySelector('.rpButton');
+ 
+ rpButton.addEventListener('click',()=>{
+  const rpValues = [...rpInput].map(input => input.value);
+  var dataInput = rpValues[19];
+  let data = new Date(dataInput);
+  let dataFormatada = data.toLocaleDateString("pt-BR", { timeZone: "UTC" });
+ 
+  const text = `
+PROBLEMA:${rpValues[0]+"\n\n"}
+ACESSO:${rpValues[1]}
+RESET DE ONU:${rpValues[2]+"\n\n"}
+VERIFICADO ALARME DO U2000: ${rpValues[3]}
+SINAL ÓTICO: ${rpValues[4]}  
+CTO:${rpValues[5]}
+PORTA:${rpValues[6]+"\n\n"}
+SSID:${rpValues[7]} 
+SENHA:${rpValues[8]+"\n"}
+WIFI SIGNAL DBm:${rpValues[9]}
+TROCA DE FREQUÊNCIA:${rpValues[10]}
+TESTE REALIZADOS:${rpValues[11]+"\n\n"}
+PING CORE 1:${rpValues[12]}
+PING CORE 2:${rpValues[13]}
+PING AMAZON:${rpValues[14]}
+PING FACEBOOK:${rpValues[15]}
+PING LOCAL:${rpValues[16]}
+QUAL DISPOSITIVO :${"\n\n"}
+CONCLUSÃO:${rpValues[21]+"\n"} 
+PONTOS DE REFERÊNCIA:${rpValues[22]}
+CONTATO DO CLIENTE:${rpValues[17]}
+CONTATO(2) DO CLIENTE:${rpValues[18]}
+PRAZO DE 1 DIA:${rpValues[20]}
+DATA DE AGENDAMENTO:${dataFormatada} 
+`
+   
+    
+  Swal.fire({
+  icon: "success",
+  title: "Pronto",
+  html: `<textarea id="rpText" class="my-custom-textarea">${text}</textarea>`,
+  
+
+  });
+  
+  const btn = document.querySelector(".swal2-confirm");
+  btn.addEventListener('click', function(e) {
+    let copyText = document.getElementById('rpText').value;
+   
+    let copyTextUpper = copyText.toUpperCase(copyText)
+    navigator.clipboard.writeText(copyTextUpper);
+    
+  });
+ });
+
+
+
+ const mdInput = document.querySelectorAll('.mdInput');
+ const mdButton = document.querySelector('.mdButton');
+ 
+ mdButton.addEventListener('click',()=>{
+  const mdValues = [...mdInput].map(input => input.value);
+  var dataInput = mdValues[7];
+  let data = new Date(dataInput);
+  let dataFormatada = data.toLocaleDateString("pt-BR", { timeZone: "UTC" });
+ 
+  const text = `
+  SSID:${mdValues[1]}
+  SENHA:${mdValues[2]}
+  CTO:${mdValues[3]}
+  PORTA:${mdValues[4]+"\n"+"\n"}
+  ENDEREÇO ANTIGO:${mdValues[8]} 
+  PONTOS DE REFERÊNCIA:${mdValues[9]+"\n"+"\n"}
+  NOVO ENDEREÇO:${mdValues[10]} 
+  PONTOS DE REFERÊNCIA:${mdValues[11]+"\n"+"\n"}
+  VALOR TAXA:R$ ${mdValues[0]+"\n"+"\n"}
+  CONTATO DO CLIENTE:${mdValues[5]}
+  CONTATO(2) DO CLIENTE:${mdValues[6]}
+  DATA DE AGENDAMENTO:${dataFormatada}
+  DESEJA ANTECIPAR : ${mdValues[12]}
+  OBS: ${mdValues[13]}
+`
+   
+    
+  Swal.fire({
+  icon: "success",
+  title: "Pronto",
+  html: `<textarea id="mdText" class="my-custom-textarea">${text}</textarea>`,
+  
+
+  });
+  
+  const btn = document.querySelector(".swal2-confirm");
+  btn.addEventListener('click', function(e) {
+    let copyText = document.getElementById('mdText').value;
+   
+    let copyTextUpper = copyText.toUpperCase(copyText)
+    navigator.clipboard.writeText(copyTextUpper);
+    
+  });
+ });
+
+
+
+ const rlInput = document.querySelectorAll('.rlInput');
+ const rlButton = document.querySelector('.rlButton');
+
+ rlButton.addEventListener('click',()=>{
+  const rlValues = [...rlInput].map(input => input.value);
+  var dataInput = rlValues[8];
+  let data = new Date(dataInput);
+  let dataFormatada = data.toLocaleDateString("pt-BR", { timeZone: "UTC" });
+ 
+  const text = `
+PLANO:${rlValues[0]+"\n"}
+VALOR TAXA R$:${rlValues[1]} 
+SSID:${rlValues[2]}
+SENHA:${rlValues[3]}
+CTO:${rlValues[4]}
+PORTA:${rlValues[5]}
+PONTOS DE REFERÊNCIA:${rlValues[10]}
+CONTATOS DO CLIENTE:${rlValues[6]}
+CONTATOS(2) DO CLIENTE:${rlValues[7]}
+DATA DO AGENDAMENTO:${dataFormatada} 
+DESEJA OU NÃO ANTECIPAR:${rlValues[9]}
+OBS:${rlValues[11]} 
+`
+   
+    
+  Swal.fire({
+  icon: "success",
+  title: "Pronto",
+  html: `<textarea id="rlText" class="my-custom-textarea">${text}</textarea>`,
+  
+
+  });
+  
+  const btn = document.querySelector(".swal2-confirm");
+  btn.addEventListener('click', function(e) {
+    let copyText = document.getElementById('rlText').value;
+   
+    let copyTextUpper = copyText.toUpperCase(copyText)
+    navigator.clipboard.writeText(copyTextUpper);
+    
+  });
+ });
+
+
+  const clInput = document.querySelectorAll('.clInput');
+ const clButton = document.querySelector('.clButton');
+ clButton.addEventListener('click',()=>{
+  const clValues = [...clInput].map(input => input.value);
+  var dataInput = clValues[9];
+  let data = new Date(dataInput);
+  let dataFormatada = data.toLocaleDateString("pt-BR", { timeZone: "UTC" });
+ 
+  const text = `
+MOTIVO DO CANCELAMENTO: ${clValues[0]+"\n"}
+SSID: ${clValues[1]}
+SENHA: ${clValues[2]}
+CTO: ${clValues[3]}
+PORTA: ${clValues[4]+"\n"+"\n"}
+CLIENTE CIENTE DA FATURA EM ABERTO: ${clValues[5]+"\n"}
+CIENTE QUE EXISTE PROPORCIONAL DE USO, DEVIDO CANCELAMENTO APÓS O VENCIMENTO: ${clValues[6]+"\n"}
+PONTOS DE REFERÊNCIA: ${clValues[11]}
+CONTATOS DO CLIENTE: ${clValues[7]}
+CONTATOS(2) DO CLIENTE: ${clValues[8]}
+DATA DO AGENDAMENTO: ${dataFormatada} 
+DESEJA OU NÃO ANTECIPAR: ${clValues[10]}
+OBS: ${clValues[12]}
+`
+   
+    
+  Swal.fire({
+  icon: "success",
+  title: "Pronto",
+  html: `<textarea id="clText" class="my-custom-textarea">${text}</textarea>`,
+  
+
+  });
+  
+  const btn = document.querySelector(".swal2-confirm");
+  btn.addEventListener('click', function(e) {
+    let copyText = document.getElementById('clText').value;
+   
+    let copyTextUpper = copyText.toUpperCase(copyText)
+    navigator.clipboard.writeText(copyTextUpper);
+    
+  });
+ });
+
+
+
+
+
+
+
+
+
+ const mdeInput = document.querySelectorAll('.mdeInput');
+ const mdeButton = document.querySelector('.mdeButton');
+ 
+ clButton.addEventListener('click',()=>{
+  const clValues = [...mdeInput].map(input => input.value);
+  var dataInput = mdeValues[9];
+  let data = new Date(dataInput);
+  let dataFormatada = data.toLocaleDateString("pt-BR", { timeZone: "UTC" });
+ 
+  const text = `
+  MOTIVO${mdeInput[1]}   
+  SSID${mdeInput[1]}
+  SENHA${mdeInput[1]}
+  CTO${mdeInput[1]}
+  PORTA${mdeInput[1]}
+  CLIENTE CIENTE DA TAXA${mdeInput[1]} 
+  VALOR TAXA R$ 
+  PONTOS DE REFERÊNCIA${mdeInput[1]}
+  CONTATOS DO CLIENTE${mdeInput[1]}
+  CONTATOS(2) DO CLIENTE${mdeInput[1]}
+  DATA DO AGENDAMENTO${mdeInput[1]} 
+  DESEJA OU NÃO ANTECIPAR${mdeInput[1]} 
+  OBS${mdeInput[1]}
+`
+   
+    
+  Swal.fire({
+  icon: "success",
+  title: "Pronto",
+  html: `<textarea id="mdeText" class="my-custom-textarea">${text}</textarea>`,
+  
+
+  });
+  
+  const btn = document.querySelector(".swal2-confirm");
+  btn.addEventListener('click', function(e) {
+    let copyText = document.getElementById('mdeText').value;
+   
+    let copyTextUpper = copyText.toUpperCase(copyText)
+    navigator.clipboard.writeText(copyTextUpper);
+    
+  });
+ });
+
+
+
+
+ const mdpInput = document.querySelectorAll('.mdpInput');
+ const mdpButton = document.querySelector('.mdpButton');
+ 
+ mdpButton.addEventListener('click',()=>{
+  const mdpValues = [...mdpInput].map(input => input.value);
+  var dataInput = mdpValues[7];
+  let data = new Date(dataInput);
+  let dataFormatada = data.toLocaleDateString("pt-BR", { timeZone: "UTC" });
+ 
+  const text = `
+SSID:${mdpValues[0]}
+SENHA:${mdpValues[1]}
+CTO:${mdpValues[2]}
+PORTA:${mdpValues[3]+"\n"+"\n"}
+
+CLIENTE CIENTE DA TAXA:${mdpValues[4]+"\n"}
+(Técnico irá julgar se é necessário a cobrança) 
+
+PONTOS DE REFERÊNCIA:${mdpValues[9]}
+CONTATOS DO CLIENTE:${mdpValues[5]}
+CONTATOS(2) DO CLIENTE:${mdpValues[6]}
+DATA DO AGENDAMENTO:${dataFormatada} 
+DESEJA OU NÃO ANTECIPAR:${mdpValues[8]} 
+OBS: ${mdpValues[10]} 
+`
+   
+    
+  Swal.fire({
+  icon: "success",
+  title: "Pronto",
+  html: `<textarea id="mdpText" class="my-custom-textarea">${text}</textarea>`,
+  
+
+  });
+  
+  const btn = document.querySelector(".swal2-confirm");
+  btn.addEventListener('click', function(e) {
+    let copyText = document.getElementById('mdpText').value;
+   
+    let copyTextUpper = copyText.toUpperCase(copyText)
+    navigator.clipboard.writeText(copyTextUpper);
+    
+  });
+ });
+
+
+
+
+ const fnInput = document.querySelectorAll('.fnInput');
+ const fnButton = document.querySelector('.fnButton');
+ console.log([...fnInput])
+ fnButton.addEventListener('click',()=>{
+  const fnValues = [...fnInput].map(input => input.value);
+  var dataInput = fnValues[10];
+  let data = new Date(dataInput);
+  let dataFormatada = data.toLocaleDateString("pt-BR", { timeZone: "UTC" });
+ 
+  const text = `
+PROBLEMA:${fnValues[0]}
+
+RESET DE ONU:${fnValues[1]} 
+STATUS SIP:${fnValues[2]}   
+
+
+VERIFICADO ALARME DO U2000:${fnValues[3]}   
+SINAL ÓTICO:${fnValues[4]} 
+CTO:${fnValues[5]}
+PORTA:${fnValues[6]}
+
+PING Servidor Sip :${fnValues[7]} 
+
+CONCLUSÃO:${fnValues[12]} 
+
+ENDEREÇO:${fnValues[13]}
+CONTATO DO CLIENTE:${fnValues[8]}
+CONTATO(2) DO CLIENTE:${fnValues[9]}
+PRAZO DE 1 DIA:${fnValues[11]} 
+DATA DE AGENDAMENTO:${dataFormatada} 
+`
+   
+    
+  Swal.fire({
+  icon: "success",
+  title: "Pronto",
+  html: `<textarea id="fnText" class="my-custom-textarea">${text}</textarea>`,
+  
+
+  });
+  
+  const btn = document.querySelector(".swal2-confirm");
+  btn.addEventListener('click', function(e) {
+    let copyText = document.getElementById('fnText').value;
+   
+    let copyTextUpper = copyText.toUpperCase(copyText)
+    navigator.clipboard.writeText(copyTextUpper);
+    
+  });
+ });
+
+
+
+
+
+
+
+
+
+
+
+
+
+ const oleInput = document.querySelectorAll('.oleInput');
+ const oleButton = document.querySelector('.oleButton');
+ console.log([...oleInput])
+ oleButton.addEventListener('click',()=>{
+  const oleValues = [...oleInput].map(input => input.value);
+  var dataInput = oleValues[5];
+  let data = new Date(dataInput);
+  let dataFormatada = data.toLocaleDateString("pt-BR", { timeZone: "UTC" });
+ 
+  const text = `
+  PLANO: ${oleValues[0]}
+  VENCIMENTO:${oleValues[1]} 
+  
+  VALOR TAXA:$ R$ 220,00 
+  MODO DE PAGAMENTO ( X ) A VISTA   
+  
+  PONTOS DE REFERÊNCIA:${oleValues[6]}
+  CONTATOS DO CLIENTE:${oleValues[3]}
+  CONTATOS(2) DO CLIENTE:${oleValues[4]}
+  DATA DO AGENDAMENTO:${dataFormatada}
+  DESEJA OU NÃO ANTECIPAR:${oleValues[2]} 
+  
+  OBS:${oleValues[7]}
+  
+`
+   
+    
+  Swal.fire({
+  icon: "success",
+  title: "Pronto",
+  html: `<textarea id="oleText" class="my-custom-textarea">${text}</textarea>`,
+  
+
+  });
+  
+  const btn = document.querySelector(".swal2-confirm");
+  btn.addEventListener('click', function(e) {
+    let copyText = document.getElementById('oleText').value;
+   
+    let copyTextUpper = copyText.toUpperCase(copyText)
+    navigator.clipboard.writeText(copyTextUpper);
+    
+  });
+ });

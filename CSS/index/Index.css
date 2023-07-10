@@ -175,8 +175,11 @@ body {
     font-size: 1.5rem;
 }
 
-
-
+.my-custom-textarea{
+    outline: none;
+    height: 25vw;
+    box-shadow: none;
+}
 .input__box {
     display: flex;
     align-items:start;

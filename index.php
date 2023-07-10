@@ -28,9 +28,10 @@ if(isset($_POST ['usuario']) || isset($_POST['senha'])){
 
             header("Location: adesao.php");
 
-        }else{
-            echo "Falha ao Logar! Usuario ou Senha Inválidos ! ";
+        }else {
+            echo ("<script>alert('Credenciais Incorretas,Tente Novamente')</script>");
         }
+            
     }
 }
 
@@ -78,17 +79,19 @@ if(isset($_POST ['usuario']) || isset($_POST['senha'])){
                     </div>    
                 </div>
 
-                <div class="forgot__password">
+                <!-- <div class="forgot__password">
                     <a href="#">
                         Esqueceu a Senha ?
                     </a>
 
-                </div>
+                </div> -->
             </div>
             <button id="login__button" type="submit">Entrar</button>
         </form>
     </main>
-    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="./Javascript/errologin.js"></script>
 </body>
-    <script src="JAVASCRIPT/login.js"></script>
+
+
 </html>

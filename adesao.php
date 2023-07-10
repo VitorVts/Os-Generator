@@ -323,7 +323,7 @@
                                     </div>
 
                                 <!--Mudança de Endereço-->
-                                <div id="OS" class="input__group OS">
+                                <div id="OS" class="input__group OS ">
                                     <div class="osTitle"><h1>Mud. Endereço</h1></div>
                                     <div class="input__box" id="inputBox">
                                         <label>Valor da Taxa</label>
@@ -364,20 +364,20 @@
 
                                     
                                     
-                                    <div class="input__box" id="inputBox" id="endereco">
+                                    <div class="input__box obs" id="inputBox" >
                                         <label for="endereço">Antigo Endereço</label>
                                         <input class="mdInput" placeholder="Digite Aqui">     
                                     </div>
-                                    <div class="input__box" id="inputBox" id="endereco">
+                                    <div class="input__box obs" id="inputBox" >
                                         <label for="endereço">Referência (Antigo)</label>
                                         <input class="mdInput" placeholder="Digite Aqui">     
                                     </div>
-                                    <div class="input__box" id="inputBox" id="endereco">
+                                    <div class="input__box obs" id="inputBox" >
                                         <label for="endereço">Novo Endereço</label>
                                         <input class="mdInput" placeholder="Digite Aqui">     
                                     </div>
                                     
-                                    <div class="input__box" id="inputBox" id="endereco">
+                                    <div class="input__box obs" id="inputBox" >
                                         <label for="endereço">Referência (Novo)</label>
                                         <input class="mdInput" placeholder="Digite Aqui">     
                                     </div>
@@ -462,7 +462,7 @@
                                                 <option value="(  ) SIM ( x )NÃO">Não</option>
                                             </select>    
                                         </div>
-                                        <div class="input__box" id="inputBox" id="endereco">
+                                        <div class="input__box obs" id="inputBox" id="endereco">
                                             <label for="endereço">Ponto de Referência</label>
                                             <input class="rlInput" placeholder="Digite Aqui">     
                                         </div>
@@ -550,7 +550,7 @@
                             <option value="(  ) SIM ( x )NÃO">Não</option>
                         </select>    
                     </div>
-                    <div class="input__box" id="inputBox" id="endereco">
+                    <div class="input__box obs" id="inputBox" >
                         <label for="endereço">Ponto de Referência</label>
                         <input class="clInput" placeholder="Digite Aqui">     
                     </div>
@@ -567,7 +567,7 @@
     
                                 </div>
                                 <!--Troca de Equipamento-->
-                                <div id="OS" class="input__group OS">
+                                <div id="OS" class="input__group OS ">
                         <div class="osTitle"><h1>Troca de Equipamento</h1></div>
                         <div class="input__box" id="inputBox">
                             <label>Motivo</label>
@@ -821,7 +821,7 @@
                                     <input class="fnInput"type="date" name="agendamento" pattern="dd-mm">    
                                 </div>
                                 <div class="input__box" id="inputBox">
-                                    <label for="antecipar">Deseja Antecipar</label>
+                                    <label for="antecipar">Prazo de 1 dia</label>
                                     <select name="antecipar" class="fnInput">
                                         <option value="">Selecione</option>
                                         <option value="( x ) SIM (  )NÃO">Sim</option>
@@ -844,6 +844,76 @@
                                     </div>
                 
                                 </div>
+
+                                <div id="OS" class="input__group OS">
+                                    <div class="osTitle"><h1>OléTv</h1></div>
+                                    
+                                                    <div class="input__box" id="inputBox">
+                                                        <label>Plano</label>
+                                                        <select name="plano" class="oleInput">
+                                                            <option value="">Selecione</option>
+                                                            <option value=" ( X ) LIFE LINE  ( ) START HD  ( ) TOPHD  ( ) PREMIUM HD ">Life Line</option>
+                                                            <option value=" (  ) LIFE LINE  ( X ) START HD  ( ) TOPHD ( ) PREMIUM HD ">StarT HD</option>
+                                                            <option value=" (  ) LIFE LINE  ( ) START HD  ( X ) TOPHD ( ) PREMIUM HD ">TOP HD</option>
+                                                            <option value=" (  ) LIFE LINE  ( ) START HD  (  ) TOPHD ( X ) PREMIUM HD ">Premium HD</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="input__box" id="inputBox">
+                                                        <label for="plano">Vencimento</label>
+                                                        <select name="plano" class="oleInput">
+                                                            <option value="">Selecione</option>
+                                                            <option value="( X ) 1      (  ) 5      (  ) 10 ">Dia 1</option>
+                                                            <option value=" (  ) 1      ( X ) 5      (  ) 10 ">Dia 5</option>
+                                                            <option value=" (  ) 1      (  ) 5      ( X ) 10 ">Dia 10</option>
+                                                        </select>   
+                                                        
+                                                    </div>
+    
+                                                    <div class="input__box" id="inputBox">
+                                                        <label for="plano">Deseja Antecipar</label>
+                                                        <select name="plano" class="oleInput" >
+                                                            <option value="">Selecione</option>
+                                                            <option value="( X ) SIM   ( ) NÃO">Sim</option>
+                                                            <option value="(  ) SIM   ( X ) NÃO">Não</option>            
+                                                        </select>
+                                                    </div>
+    
+                                                    
+                                        
+                                                    
+                                    
+                                   
+                                    <div class="input__box" id="inputBox">
+                                        <label for="contato">Contato</label>
+                                        <input class="oleInput"type="text" name="contato2" placeholder="(00)00000-0000">    
+                                    </div>
+                
+                                    <div class="input__box" id="inputBox">
+                                        <label for="contato2">Contato 2</label>
+                                        <input class="oleInput"type="text" name="contato2" placeholder="(00)00000-0000">    
+                                    </div>
+                    
+                                    <div class="input__box" id="inputBox">
+                                        <label for="agendamento">Data de Agendamento</label>
+                                        
+                                        <input class="oleInput"type="date" name="agendamento" pattern="dd-mm">    
+                                    </div>
+                                    
+
+                                    <div class="input__box obs" id="inputBox">
+                                        <label for="endereço">Ponto de Referência</label>
+                                        <input class="oleInput" placeholder="Digite Aqui">     
+                                    </div>
+                                    <div class="input__box  obs" id="inputBox">
+                                        <label for="endereço">OBS: </label>
+                                        <input class="oleInput" placeholder="Digite Aqui">     
+                                    </div>
+                    
+                                        <div class="oleButton" id="criar__button">
+                                             <button>Criar</button>
+                                        </div>
+                    
+                                    </div>
            </div>
         
         </div>
